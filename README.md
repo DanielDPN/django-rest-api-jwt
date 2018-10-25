@@ -28,6 +28,23 @@ Response
     token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Im5ld191c2VyIiwiZXhwIjoxNTQwNDkyMTQ2LCJlbWFpbCI6Im5ld191c2VyQG1haWwuY29tIn0.8_8S-5MYY-gXkkJ-emT97s-aW8JhMEGnOyahS20uPtQ"
 }
 ```
+### Create Token
+Resquest
+```sh
+curl -X POST \
+  http://localhost:8000/api-token-auth/ \
+  -H 'content-type: application/json' \
+  -d '{
+        "username": "new_user",
+        "password": "new_pass"
+      }'
+```
+Response
+```sh
+{
+    token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Im5ld191c2VyIiwiZXhwIjoxNTQwNDkyMTQ2LCJlbWFpbCI6Im5ld191c2VyQG1haWwuY29tIn0.8_8S-5MYY-gXkkJ-emT97s-aW8JhMEGnOyahS20uPtQ"
+}
+```
 ### Songs
 Resquest
 ```sh
