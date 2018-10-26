@@ -1,6 +1,6 @@
 # Django Rest API With JWT
 ### Create User 
-Resquest
+Request
 ```sh
 curl -X POST \
   http://localhost:8000/api/v1/auth/register/ \
@@ -12,7 +12,7 @@ curl -X POST \
       }'
 ```
 ### Login
-Resquest
+Request
 ```sh
 curl -X POST \
   http://localhost:8000/api/v1/auth/login/ \
@@ -29,7 +29,7 @@ Response
 }
 ```
 ### Create Token
-Resquest
+Request
 ```sh
 curl -X POST \
   http://localhost:8000/api-token-auth/ \
@@ -46,7 +46,7 @@ Response
 }
 ```
 ### Songs
-Resquest
+Request
 ```sh
 curl -X GET \
   http://localhost:8000/api/v1/songs/ \
@@ -72,4 +72,63 @@ Response
         "artist": "James Ingram"
     }
 ]
+```
+### Find Song
+Request
+```sh
+curl -X GET \
+  http://localhost:8000/api/v1/songs/1/ \
+  -H 'authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Im5ld191c2VyIiwiZXhwIjoxNTQwNTU3Mjc3LCJlbWFpbCI6Im5ld191c2VyQG1haWwuY29tIn0.zCPIfm25UD3ySF7ivxfKwBEIaz4x68U8CY0pRCkJWTg' \
+```
+Response
+```sh
+{
+    "title": "Kiss from a rose",
+    "artist": "Seal"
+}
+```
+### Create Song
+Request
+```sh
+curl -X POST \
+  http://localhost:8000/api/v1/songs/ \
+  -H 'authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Im5ld191c2VyIiwiZXhwIjoxNTQwNTU3Mjc3LCJlbWFpbCI6Im5ld191c2VyQG1haWwuY29tIn0.zCPIfm25UD3ySF7ivxfKwBEIaz4x68U8CY0pRCkJWTg' \
+  -H 'content-type: application/json' \
+  -d '{
+        "title": "Lifelines",
+        "artist": ""
+      }'
+```
+Response
+```sh
+{
+    "title": "Lifelines",
+    "artist": ""
+}
+```
+### Update Song
+Request
+```sh
+curl -X PUT \
+  http://localhost:8000/api/v1/songs/5/ \
+  -H 'authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Im5ld191c2VyIiwiZXhwIjoxNTQwNTU3Mjc3LCJlbWFpbCI6Im5ld191c2VyQG1haWwuY29tIn0.zCPIfm25UD3ySF7ivxfKwBEIaz4x68U8CY0pRCkJWTg' \
+  -H 'content-type: application/json' \
+  -d '{
+        "title": "Lifelines",
+        "artist": "A-ha"
+      }'
+```
+Response
+```sh
+{
+    "title": "Lifelines",
+    "artist": "A-ha"
+}
+```
+### Remove Song
+Request
+```sh
+curl -X DELETE \
+  http://localhost:8000/api/v1/songs/5/ \
+  -H 'authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Im5ld191c2VyIiwiZXhwIjoxNTQwNTU3Mjc3LCJlbWFpbCI6Im5ld191c2VyQG1haWwuY29tIn0.zCPIfm25UD3ySF7ivxfKwBEIaz4x68U8CY0pRCkJWTg' \
 ```
