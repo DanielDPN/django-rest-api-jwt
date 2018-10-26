@@ -1,6 +1,6 @@
 # Django Rest API With JWT
 ### Create User 
-Resquest
+Request
 ```sh
 curl -X POST \
   http://localhost:8000/api/v1/auth/register/ \
@@ -12,7 +12,7 @@ curl -X POST \
       }'
 ```
 ### Login
-Resquest
+Request
 ```sh
 curl -X POST \
   http://localhost:8000/api/v1/auth/login/ \
@@ -29,7 +29,7 @@ Response
 }
 ```
 ### Create Token
-Resquest
+Request
 ```sh
 curl -X POST \
   http://localhost:8000/api-token-auth/ \
@@ -46,7 +46,7 @@ Response
 }
 ```
 ### Songs
-Resquest
+Request
 ```sh
 curl -X GET \
   http://localhost:8000/api/v1/songs/ \
